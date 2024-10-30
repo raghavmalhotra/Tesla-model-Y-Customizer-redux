@@ -1,9 +1,15 @@
 import { PaymentBreakdown, AccessoriesCheckboxes } from './'
-import { toggleFullSelfDriving } from '../store/carSlice'
+import {
+  toggleFullSelfDriving,
+  togglePerformanceUpgrade,
+} from '../store/carSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
 export const Customizations = () => {
   const dispatch = useDispatch()
+  const isPerformanceUpgrade = useSelector(
+    (state) => state.car.performanceUpgrade
+  )
   return (
     <>
       <div className='border p-4 mb-8 rounded-lg shadow'>
@@ -26,7 +32,12 @@ export const Customizations = () => {
         <h3 className='font-semibold mb-2'>Performance Package</h3>
         <button
           id='performance-btn'
-          className='w-full py-4 bg-gray-200 hover:bg-gray-400 rounded-lg'
+          className={`w-full py-4 ${
+            isPerformanceUpgrade
+              ? 'bg-gray-700 hover:bg-gray-600 hover:text-white text-white'
+              : 'bg-gray-200 hover:bg-gray-100 text-black'
+          } rounded-lg`}
+          onClick={() => dispatch(togglePerformanceUpgrade())}
         >
           Performance Upgrade (+$5,000)
         </button>

@@ -1,7 +1,6 @@
 import {
   removePerformanceWheels,
   addPerformanceWheels,
-  togglePerformanceWheels,
 } from '../store/carSlice'
 import { useDispatch, useSelector } from 'react-redux'
 export const WheelButtons = () => {

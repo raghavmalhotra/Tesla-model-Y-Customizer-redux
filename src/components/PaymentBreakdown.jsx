@@ -31,7 +31,15 @@ export const PaymentBreakdown = () => {
           <p>
             Estimated Monthly Payment:
             <span id='monthly-payment' className='font-bold text-2xl'>
-              $818.65
+              {/* {total - 5000 + ((total - 5000) * 0.03) / 60} */}
+              {new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+              }).format(
+                Math.round(
+                  ((total - 5000 + (total - 5000) * 0.03) / 60) * 100
+                ) / 100
+              )}
             </span>
           </p>
         </div>
