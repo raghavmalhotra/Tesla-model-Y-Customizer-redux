@@ -9,4 +9,4 @@ export { default as stealthGreyPerformance } from './stealth-grey-performance.jp
 export { default as quickSilverPerformance } from './quicksilver-performance.jpg'
 export { default as solidBlackPerformance } from './solid-black-performance.jpg'
 export { default as pearlWhitePerformance } from './pearl-white-performance.jpg'
-export { default as deepBlueMetallicPerformance } from './deep-blue-metallic.jpg'
+export { default as deepBlueMetallicPerformance } from './deep-blue-metallic-performance.jpg'

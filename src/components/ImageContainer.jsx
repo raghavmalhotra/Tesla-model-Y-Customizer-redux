@@ -1,8 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
 
 export const ImageContainer = () => {
   const currenExteriortColor = useSelector((state) => state.car.exteriorColor)
   const currentInteriorColor = useSelector((state) => state.car.interiorColor)
+  const performanceMode = useSelector((state) => state.car.performanceMode)
+
+  useEffect(() => {
+    console.log(currenExteriortColor)
+  }, [performanceMode])
 
   return (
     <section className='w-full md:w-3/4'>

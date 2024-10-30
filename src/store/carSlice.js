@@ -26,7 +26,6 @@ const colorMap = {
   deepBlueMetallic,
   interiorDark,
   interiorLight,
-
   ultraRedPerformance,
   stealthGreyPerformance,
   quickSilverPerformance,
@@ -39,6 +38,7 @@ const carSlice = createSlice({
   initialState: {
     exteriorColor: stealthGrey,
     interiorColor: interiorDark,
+    performanceMode: false,
     Customizations: [],
     total: 0,
   },
@@ -51,6 +51,14 @@ const carSlice = createSlice({
       //   state.items = newList
       //   state.total -= action.payload.price
     },
+
+    togglePerformanceWheels: (state) => {
+      state.performanceMode = !state.performanceMode
+      state.exteriorColor = state.performanceMode
+        ? state.exteriorColor.slice(0, -4) + '-Performance.jpg'
+        : state.exteriorColor.slice(0, -16) + '.jpg'
+      console.log(state.exteriorColor)
+    },
     changeColor: (state, action) => {
       if (
         action.payload === 'interiorDark' ||
@@ -58,7 +66,10 @@ const carSlice = createSlice({
       ) {
         state.interiorColor = colorMap[action.payload]
       } else {
-        state.exteriorColor = colorMap[action.payload]
+        const selectedColor = state.performanceMode
+          ? colorMap[action.payload + 'Performance']
+          : colorMap[action.payload]
+        state.exteriorColor = selectedColor
       }
 
       console.log(action.payload)
@@ -66,6 +77,6 @@ const carSlice = createSlice({
   },
 })
 
-export const { changeColor } = carSlice.actions
+export const { changeColor, togglePerformanceWheels } = carSlice.actions
 
 export const carReducer = carSlice.reducer
