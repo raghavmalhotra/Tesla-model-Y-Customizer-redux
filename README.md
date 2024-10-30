@@ -44,3 +44,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 This project is licensed under the MIT License.
+
+## Demo
+
+Check out the app in action at: https://teslaredux.netlify.app/
