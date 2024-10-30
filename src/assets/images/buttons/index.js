@@ -1,0 +1,8 @@
+export { default as UltraRed } from './ultra-red.avif'
+export { default as StealthGray } from './stealth-grey.avif'
+export { default as quickSilver } from './quicksilver.avif'
+export { default as solidBlack } from './solid-black.avif'
+export { default as pearlWhite } from './pearl-white.avif'
+export { default as deepBlueMetallic } from './deep-blue-metallic.avif'
+export { default as interiorDark } from './button-dark.avif'
+export { default as interiorLight } from './button-light.avif'
