@@ -38,7 +38,7 @@ const carSlice = createSlice({
   initialState: {
     exteriorColor: stealthGrey,
     interiorColor: interiorDark,
-    performanceMode: false,
+    performanceWheels: false,
     Customizations: [],
     total: 0,
   },
@@ -53,11 +53,28 @@ const carSlice = createSlice({
     },
 
     togglePerformanceWheels: (state) => {
-      state.performanceMode = !state.performanceMode
-      state.exteriorColor = state.performanceMode
+      state.performanceWheels = !state.performanceWheels
+      state.exteriorColor = state.performanceWheels
         ? state.exteriorColor.slice(0, -4) + '-Performance.jpg'
         : state.exteriorColor.slice(0, -16) + '.jpg'
-      console.log(state.exteriorColor)
+      // console.log(state.exteriorColor)
+    },
+    addPerformanceWheels: (state) => {
+      1
+      if (!state.performanceWheels) {
+        state.performanceWheels = true
+        state.exteriorColor =
+          state.exteriorColor.slice(0, -4) + '-Performance.jpg'
+        // console.log(state.exteriorColor)
+      }
+    },
+
+    removePerformanceWheels: (state) => {
+      if (state.performanceWheels) {
+        state.performanceWheels = false
+        state.exteriorColor = state.exteriorColor.slice(0, -16) + '.jpg'
+        // console.log(state.exteriorColor)
+      }
     },
     changeColor: (state, action) => {
       if (
@@ -66,7 +83,7 @@ const carSlice = createSlice({
       ) {
         state.interiorColor = colorMap[action.payload]
       } else {
-        const selectedColor = state.performanceMode
+        const selectedColor = state.performanceWheels
           ? colorMap[action.payload + 'Performance']
           : colorMap[action.payload]
         state.exteriorColor = selectedColor
@@ -77,6 +94,11 @@ const carSlice = createSlice({
   },
 })
 
-export const { changeColor, togglePerformanceWheels } = carSlice.actions
+export const {
+  changeColor,
+  togglePerformanceWheels,
+  addPerformanceWheels,
+  removePerformanceWheels,
+} = carSlice.actions
 
 export const carReducer = carSlice.reducer
