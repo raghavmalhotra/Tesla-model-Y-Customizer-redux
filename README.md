@@ -63,6 +63,6 @@ Here are some screenshots of the Tesla Model Y Customizer and Price Calculator a
 
 ### Mobile Screen Options
 
-![Customization Options](https://raw.githubusercontent.com/raghavmalhotra/Tesla-model-Y-Customizer-redux/refs/heads/main/screenshots/2.png)
+![Responsive Design](https://raw.githubusercontent.com/raghavmalhotra/Tesla-model-Y-Customizer-redux/refs/heads/main/screenshots/2.png)
 
 ![Customization Options](https://raw.githubusercontent.com/raghavmalhotra/Tesla-model-Y-Customizer-redux/refs/heads/main/screenshots/3.png)
