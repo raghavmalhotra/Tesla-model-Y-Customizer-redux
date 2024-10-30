@@ -13,7 +13,7 @@ export const ImageContainer = () => {
   return (
     <section className='w-full md:w-3/4'>
       <div className='sticky top-24 '>
-        <div className='h-96 bg-gray-200 flex item-center justify-center overflow-hidden mb-3'>
+        <div className=' h-60 sm:h-96 bg-gray-200 flex item-center justify-center overflow-hidden mb-3'>
           <img
             src={currenExteriortColor}
             alt='stealth gray'
@@ -23,7 +23,7 @@ export const ImageContainer = () => {
 
         {/* interior */}
 
-        <div className='h-96 bg-gray-200 flex item-center justify-center overflow-hidden mb-4'>
+        <div className='h-60 sm:h-96 bg-gray-200 flex item-center justify-center overflow-hidden mb-4'>
           <img
             src={currentInteriorColor}
             alt='dark interior'
