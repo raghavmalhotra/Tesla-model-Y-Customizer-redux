@@ -16,6 +16,7 @@ import {
 } from '../assets/images/exterior'
 
 import { interiorDark, interiorLight } from '../assets/images/interior'
+import { act } from 'react'
 
 const colorMap = {
   ultraRed,
@@ -41,32 +42,28 @@ const carSlice = createSlice({
     exteriorColorString: 'stealthGrey',
     interiorColorString: 'interiorDark',
     performanceWheels: false,
-    Customizations: [],
-    total: 0,
+    fullSelfDriving: false,
+    total: 52490,
   },
   reducers: {
-    // togglePerformanceWheels: (state) => {
-    //   state.performanceWheels = !state.performanceWheels
-    //   state.exteriorColor = state.performanceWheels
-    //     ? state.exteriorColor.slice(0, -4) + '-Performance.jpg'
-    //     : state.exteriorColor.slice(0, -16) + '.jpg'
-    //   // console.log(state.exteriorColor)
-    // },
     addPerformanceWheels: (state) => {
       if (!state.performanceWheels) {
         state.performanceWheels = true
+        state.exteriorColorString = state.exteriorColorString + 'Performance'
         const selectedColor = colorMap[state.exteriorColorString]
         state.exteriorColor = selectedColor
-        console.log(state.exteriorColor)
+        state.total += 2500
       }
     },
 
     removePerformanceWheels: (state) => {
       if (state.performanceWheels) {
         state.performanceWheels = false
+        state.exteriorColorString = state.exteriorColorString.slice(0, -11)
         const selectedColor = colorMap[state.exteriorColorString]
         state.exteriorColor = selectedColor
-        console.log(state.exteriorColor)
+        // console.log(state.exteriorColor)
+        state.total += 2500
       }
     },
     changeColor: (state, action) => {
@@ -75,18 +72,27 @@ const carSlice = createSlice({
         action.payload === 'interiorLight'
       ) {
         state.interiorColorString = action.payload
-        state.interiorColor = colorMap[action.payload]
-        removePerformanceWheels(state)
-      } else {
-        state.exteriorColorString = action.payload + 'Performance'
-        const selectedColor = state.performanceWheels
-          ? colorMap[action.payload + 'Performance']
-          : colorMap[action.payload]
-        state.exteriorColor = selectedColor
-        addPerformanceWheels(state)
-      }
 
-      console.log(state.exteriorColor)
+        state.interiorColor = colorMap[action.payload]
+      } else {
+        if (state.performanceWheels) {
+          state.exteriorColor = colorMap[action.payload + 'Performance']
+          state.exteriorColorString = action.payload + 'Performance'
+        } else {
+          state.exteriorColor = colorMap[action.payload]
+          state.exteriorColorString = action.payload
+        }
+      }
+    },
+
+    toggleFullSelfDriving: (state, action) => {
+      state.fullSelfDriving = action.payload
+
+      if (state.fullSelfDriving) {
+        state.total = state.total + 5000
+      } else {
+        state.total = state.total - 5000
+      }
     },
   },
 })
@@ -96,6 +102,7 @@ export const {
   togglePerformanceWheels,
   addPerformanceWheels,
   removePerformanceWheels,
+  toggleFullSelfDriving,
 } = carSlice.actions
 
 export const carReducer = carSlice.reducer

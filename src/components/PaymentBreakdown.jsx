@@ -1,10 +1,15 @@
+import { useDispatch, useSelector } from 'react-redux'
 export const PaymentBreakdown = () => {
+  const total = useSelector((state) => state.car.total)
   return (
     <>
       <div className='pt-4'>
         <h3 className='font-semibold text-lg'>Total Price</h3>
         <p id='total-price' className='text-2xl font-bold'>
-          $52,490
+          {new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+          }).format(total)}
         </p>
       </div>
 

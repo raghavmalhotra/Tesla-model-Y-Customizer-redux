@@ -1,6 +1,9 @@
 import { PaymentBreakdown, AccessoriesCheckboxes } from './'
+import { toggleFullSelfDriving } from '../store/carSlice'
+import { useDispatch, useSelector } from 'react-redux'
 
 export const Customizations = () => {
+  const dispatch = useDispatch()
   return (
     <>
       <div className='border p-4 mb-8 rounded-lg shadow'>
@@ -10,6 +13,9 @@ export const Customizations = () => {
             type='checkbox'
             id='full-self-driving-checkbox'
             className='form-checkbox h-5 w-5 text-blue-600'
+            onChange={(e) => {
+              dispatch(toggleFullSelfDriving(e.target.checked))
+            }}
           />
           <span>Add Full Self-Driving for $8,500</span>
         </label>
