@@ -60,7 +60,6 @@ const carSlice = createSlice({
       // console.log(state.exteriorColor)
     },
     addPerformanceWheels: (state) => {
-      1
       if (!state.performanceWheels) {
         state.performanceWheels = true
         state.exteriorColor =
