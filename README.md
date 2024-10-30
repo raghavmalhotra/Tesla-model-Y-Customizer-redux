@@ -48,3 +48,21 @@ This project is licensed under the MIT License.
 ## Demo
 
 Check out the app in action at: https://teslaredux.netlify.app/
+
+## Screenshots
+
+Here are some screenshots of the Tesla Model Y Customizer and Price Calculator application:
+
+### Home Screen
+
+![Home Screen](https://raw.githubusercontent.com/raghavmalhotra/Tesla-model-Y-Customizer-redux/refs/heads/main/screenshots/1.png)
+
+### Price Calculation
+
+![Price Calculation](https://raw.githubusercontent.com/raghavmalhotra/Tesla-model-Y-Customizer-redux/refs/heads/main/screenshots/4.png)
+
+### Mobile Screen Options
+
+![Customization Options](https://raw.githubusercontent.com/raghavmalhotra/Tesla-model-Y-Customizer-redux/refs/heads/main/screenshots/2.png)
+
+![Customization Options](https://raw.githubusercontent.com/raghavmalhotra/Tesla-model-Y-Customizer-redux/refs/heads/main/screenshots/3.png)
