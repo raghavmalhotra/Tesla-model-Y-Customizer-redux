@@ -16,7 +16,7 @@ export const ImageContainer = () => {
         <div className=' h-60 sm:h-96 bg-gray-200 flex item-center justify-center overflow-hidden mb-3'>
           <img
             src={currenExteriortColor}
-            alt='stealth gray'
+            alt=''
             className='max-w-full h-auto transform scale-150'
           />
         </div>
@@ -26,7 +26,7 @@ export const ImageContainer = () => {
         <div className='h-60 sm:h-96 bg-gray-200 flex item-center justify-center overflow-hidden mb-4'>
           <img
             src={currentInteriorColor}
-            alt='dark interior'
+            alt=''
             className='max-w-full h-auto transform scale-150'
           />
         </div>

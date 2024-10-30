@@ -38,41 +38,35 @@ const carSlice = createSlice({
   initialState: {
     exteriorColor: stealthGrey,
     interiorColor: interiorDark,
+    exteriorColorString: 'stealthGrey',
+    interiorColorString: 'interiorDark',
     performanceWheels: false,
     Customizations: [],
     total: 0,
   },
   reducers: {
-    addcustomization: (state, action) => {},
-    removeCustomization: (state, action) => {
-      //   const newList = state.items.filter(
-      //     (item) => item.id !== action.payload.id
-      //   )
-      //   state.items = newList
-      //   state.total -= action.payload.price
-    },
-
-    togglePerformanceWheels: (state) => {
-      state.performanceWheels = !state.performanceWheels
-      state.exteriorColor = state.performanceWheels
-        ? state.exteriorColor.slice(0, -4) + '-Performance.jpg'
-        : state.exteriorColor.slice(0, -16) + '.jpg'
-      // console.log(state.exteriorColor)
-    },
+    // togglePerformanceWheels: (state) => {
+    //   state.performanceWheels = !state.performanceWheels
+    //   state.exteriorColor = state.performanceWheels
+    //     ? state.exteriorColor.slice(0, -4) + '-Performance.jpg'
+    //     : state.exteriorColor.slice(0, -16) + '.jpg'
+    //   // console.log(state.exteriorColor)
+    // },
     addPerformanceWheels: (state) => {
       if (!state.performanceWheels) {
         state.performanceWheels = true
-        state.exteriorColor =
-          state.exteriorColor.slice(0, -4) + '-Performance.jpg'
-        // console.log(state.exteriorColor)
+        const selectedColor = colorMap[state.exteriorColorString]
+        state.exteriorColor = selectedColor
+        console.log(state.exteriorColor)
       }
     },
 
     removePerformanceWheels: (state) => {
       if (state.performanceWheels) {
         state.performanceWheels = false
-        state.exteriorColor = state.exteriorColor.slice(0, -16) + '.jpg'
-        // console.log(state.exteriorColor)
+        const selectedColor = colorMap[state.exteriorColorString]
+        state.exteriorColor = selectedColor
+        console.log(state.exteriorColor)
       }
     },
     changeColor: (state, action) => {
@@ -80,15 +74,19 @@ const carSlice = createSlice({
         action.payload === 'interiorDark' ||
         action.payload === 'interiorLight'
       ) {
+        state.interiorColorString = action.payload
         state.interiorColor = colorMap[action.payload]
+        removePerformanceWheels(state)
       } else {
+        state.exteriorColorString = action.payload + 'Performance'
         const selectedColor = state.performanceWheels
           ? colorMap[action.payload + 'Performance']
           : colorMap[action.payload]
         state.exteriorColor = selectedColor
+        addPerformanceWheels(state)
       }
 
-      console.log(action.payload)
+      console.log(state.exteriorColor)
     },
   },
 })
