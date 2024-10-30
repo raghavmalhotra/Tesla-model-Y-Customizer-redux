@@ -18,6 +18,28 @@ This application is a Tesla Model Y customizer and price calculator inspired by 
 
 This project is developed with **Redux Toolkit** for efficient state management, allowing for scalable and maintainable code. Redux Toolkit provides a set of tools and abstractions that simplify working with Redux, making it easier to manage application state.
 
+## Screenshots
+
+Here are some screenshots of the Tesla Model Y Customizer and Price Calculator application:
+
+### Home Screen
+
+![Home Screen](https://raw.githubusercontent.com/raghavmalhotra/Tesla-model-Y-Customizer-redux/refs/heads/main/screenshots/1.png)
+
+### Price Calculation
+
+![Price Calculation](https://raw.githubusercontent.com/raghavmalhotra/Tesla-model-Y-Customizer-redux/refs/heads/main/screenshots/4.png)
+
+### Mobile Screen Options
+
+![Responsive Design](https://raw.githubusercontent.com/raghavmalhotra/Tesla-model-Y-Customizer-redux/refs/heads/main/screenshots/2.png)
+
+![Customization Options](https://raw.githubusercontent.com/raghavmalhotra/Tesla-model-Y-Customizer-redux/refs/heads/main/screenshots/3.png)
+
+## Demo
+
+Check out the app in action at: https://teslaredux.netlify.app/
+
 ## Installation
 
 1. Clone the repository:
@@ -44,25 +66,3 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 This project is licensed under the MIT License.
-
-## Demo
-
-Check out the app in action at: https://teslaredux.netlify.app/
-
-## Screenshots
-
-Here are some screenshots of the Tesla Model Y Customizer and Price Calculator application:
-
-### Home Screen
-
-![Home Screen](https://raw.githubusercontent.com/raghavmalhotra/Tesla-model-Y-Customizer-redux/refs/heads/main/screenshots/1.png)
-
-### Price Calculation
-
-![Price Calculation](https://raw.githubusercontent.com/raghavmalhotra/Tesla-model-Y-Customizer-redux/refs/heads/main/screenshots/4.png)
-
-### Mobile Screen Options
-
-![Responsive Design](https://raw.githubusercontent.com/raghavmalhotra/Tesla-model-Y-Customizer-redux/refs/heads/main/screenshots/2.png)
-
-![Customization Options](https://raw.githubusercontent.com/raghavmalhotra/Tesla-model-Y-Customizer-redux/refs/heads/main/screenshots/3.png)
